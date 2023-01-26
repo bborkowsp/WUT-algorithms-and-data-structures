@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pl"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DeterministicFiniteAutomatonTextSearch.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">aisd_lab_12_finite_state_automaton_based_string_search</a> &gt; <a href="index.source.html" class="el_package">pl.edu.pw.ee</a> &gt; <span class="el_source">DeterministicFiniteAutomatonTextSearch.java</span></div><h1>DeterministicFiniteAutomatonTextSearch.java</h1><pre class="source lang-java linenums">package pl.edu.pw.ee;
+
+import static java.lang.Math.min;
+import java.util.ArrayList;
+import static java.util.stream.Collectors.toList;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import pl.edu.pw.ee.services.PatternSearch;
+
+public class DeterministicFiniteAutomatonTextSearch implements PatternSearch {
+
+    private class Key {
+
+        private int state;
+        private char sign;
+
+<span class="fc" id="L21">        public Key(int state, char sign) {</span>
+<span class="fc" id="L22">            this.state = state;</span>
+<span class="fc" id="L23">            this.sign = sign;</span>
+<span class="fc" id="L24">        }</span>
+
+        @Override
+        public boolean equals(Object o) {
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">            if (o == this) {</span>
+<span class="nc" id="L29">                return true;</span>
+            }
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">            if (!(o instanceof Key)) {</span>
+<span class="nc" id="L32">                return false;</span>
+            }
+<span class="fc" id="L34">            Key key = (Key) o;</span>
+<span class="pc bpc" id="L35" title="2 of 4 branches missed.">            return state == key.state &amp;&amp; sign == key.sign;</span>
+        }
+
+        @Override
+        public int hashCode() {
+<span class="fc" id="L40">            return Objects.hash(state, sign);</span>
+        }
+    }
+
+    private String pattern;
+    private Map&lt;Key, Integer&gt; transMap;
+
+<span class="fc" id="L47">    public DeterministicFiniteAutomatonTextSearch(String pattern) {</span>
+<span class="fc" id="L48">        validateInput(pattern);</span>
+
+<span class="fc" id="L50">        this.pattern = pattern;</span>
+<span class="fc" id="L51">        buildTransitionMatrix();</span>
+<span class="fc" id="L52">    }</span>
+
+    @Override
+    public int findFirst(String text) {
+<span class="fc" id="L56">        validateInput(text);</span>
+<span class="fc" id="L57">        int n = text.length();</span>
+<span class="fc" id="L58">        int acceptedState = pattern.length();</span>
+<span class="fc" id="L59">        int result = -1;</span>
+
+<span class="fc" id="L61">        int state = 0;</span>
+
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L64">            state = transMap.getOrDefault(new Key(state, text.charAt(i)), 0);</span>
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (state == acceptedState) {</span>
+<span class="fc" id="L67">                result = i - acceptedState + 1;</span>
+<span class="fc" id="L68">                break;</span>
+            }
+        }
+
+<span class="fc" id="L72">        return result;</span>
+    }
+
+    @Override
+    public int[] findAll(String text) {
+<span class="fc" id="L77">        validateInput(text);</span>
+
+<span class="fc" id="L79">        int n = text.length();</span>
+<span class="fc" id="L80">        int acceptedState = pattern.length();</span>
+<span class="fc" id="L81">        ArrayList&lt;Integer&gt; results = new ArrayList&lt;&gt;();</span>
+        int result;
+<span class="fc" id="L83">        int state = 0;</span>
+
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc" id="L86">            state = transMap.getOrDefault(new Key(state, text.charAt(i)), 0);</span>
+
+<span class="fc bfc" id="L88" title="All 2 branches covered.">            if (state == acceptedState) {</span>
+<span class="fc" id="L89">                result = i - acceptedState + 1;</span>
+<span class="fc" id="L90">                results.add(result);</span>
+            }
+        }
+        
+<span class="fc" id="L94">        int[] finalResults = new int[results.size()];</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">        for(int i = 0 ; i &lt; results.size(); i++){</span>
+<span class="fc" id="L96">            finalResults[i] = results.get(i);</span>
+        }
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        if(results.isEmpty()){</span>
+<span class="fc" id="L99">            int [] emptyResults = {-1};</span>
+<span class="fc" id="L100">            return emptyResults;</span>
+        }
+<span class="fc" id="L102">        return finalResults;</span>
+    }
+
+    private void validateInput(String txt) {
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">        if (txt == null) {</span>
+<span class="nc" id="L107">            throw new IllegalArgumentException(&quot;Input text cannot be null!&quot;);</span>
+        }
+<span class="fc" id="L109">    }</span>
+
+    private void buildTransitionMatrix() {
+<span class="fc" id="L112">        transMap = new HashMap&lt;&gt;();</span>
+
+<span class="fc" id="L114">        int m = pattern.length();</span>
+<span class="fc" id="L115">        List&lt;Character&gt; alphabet = getAlphabetOfPattern();</span>
+
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        for (int q = 0; q &lt;= m; q++) {</span>
+<span class="fc bfc" id="L118" title="All 2 branches covered.">            for (char sign : alphabet) {</span>
+
+<span class="fc" id="L120">                int k = min(m + 1, q + 2);</span>
+<span class="fc" id="L121">                k--;</span>
+
+<span class="fc bfc" id="L123" title="All 4 branches covered.">                while (k &gt; 0 &amp;&amp; !isSuffixOfPattern(k, q, sign)) {</span>
+<span class="fc" id="L124">                    k--;</span>
+                }
+<span class="fc" id="L126">                System.out.println(String.format(&quot;sigma(%d, %c) = %d\n&quot;, q, sign, k));</span>
+<span class="fc" id="L127">                transMap.put(new Key(q, sign), k);</span>
+<span class="fc" id="L128">            }</span>
+        }
+<span class="fc" id="L130">    }</span>
+
+    private List&lt;Character&gt; getAlphabetOfPattern() {
+<span class="fc" id="L133">        List&lt;Character&gt; signs = pattern.chars()</span>
+<span class="fc" id="L134">                .distinct()</span>
+<span class="fc" id="L135">                .mapToObj(c -&gt; (char) c)</span>
+<span class="fc" id="L136">                .collect(toList());</span>
+
+<span class="fc" id="L138">        return signs;</span>
+    }
+
+    private boolean isSuffixOfPattern(int kIndex, int qIndex, char sign) {
+<span class="fc" id="L142">        boolean isSuffix = false;</span>
+
+<span class="fc bfc" id="L144" title="All 2 branches covered.">        if (pattern.charAt(--kIndex) == sign) {</span>
+<span class="fc" id="L145">            isSuffix = true;</span>
+
+<span class="fc bfc" id="L147" title="All 2 branches covered.">            while (kIndex &gt; 0) {</span>
+<span class="fc" id="L148">                kIndex--;</span>
+<span class="fc" id="L149">                qIndex--;</span>
+
+<span class="fc bfc" id="L151" title="All 2 branches covered.">                if (pattern.charAt(kIndex) != pattern.charAt(qIndex)) {</span>
+<span class="fc" id="L152">                    isSuffix = false;</span>
+<span class="fc" id="L153">                    break;</span>
+                }
+            }
+        }
+
+<span class="fc" id="L158">        return isSuffix;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
