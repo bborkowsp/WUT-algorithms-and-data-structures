@@ -1,0 +1,3 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+aisd_lab_12_finite_state_automaton_based_string_search,pl.edu.pw.ee,DeterministicFiniteAutomatonTextSearch,5,279,1,27,1,63,1,21,0,8
+aisd_lab_12_finite_state_automaton_based_string_search,pl.edu.pw.ee,DeterministicFiniteAutomatonTextSearch.Key,5,50,4,4,2,9,4,3,0,3

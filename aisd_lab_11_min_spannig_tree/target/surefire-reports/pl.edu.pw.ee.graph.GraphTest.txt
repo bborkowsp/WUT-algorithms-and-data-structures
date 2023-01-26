@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: pl.edu.pw.ee.graph.GraphTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.191 s <<< FAILURE! - in pl.edu.pw.ee.graph.GraphTest
+shouldCorrectlyReadExtendedRepeatedData  Time elapsed: 0.106 s  <<< ERROR!
+pl.edu.pw.ee.exception.ReadingGraphFromFileException: Cannot correctly parse line 7 from file
+	at pl.edu.pw.ee.graph.GraphTest.shouldCorrectlyReadExtendedRepeatedData(GraphTest.java:75)
+
+shouldCorrectlyReadExtendedSmallBasicFile  Time elapsed: 0.009 s  <<< ERROR!
+pl.edu.pw.ee.exception.ReadingGraphFromFileException: Cannot correctly parse line 6 from file
+	at pl.edu.pw.ee.graph.GraphTest.shouldCorrectlyReadExtendedSmallBasicFile(GraphTest.java:40)
+

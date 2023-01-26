@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.212" tests="38" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1250"/>
+    <property name="java.class.path" value="E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence\target\test-classes;E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence\target\classes;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Paweł\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.1\junit-vintage-engine-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\Paweł\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Paweł\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Paweł\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Paweł\.m2\repository\org\assertj\assertj-core\3.11.1\assertj-core-3.11.1.jar;C:\Users\Paweł\.m2\repository\org\mockito\mockito-core\4.0.0\mockito-core-4.0.0.jar;C:\Users\Paweł\.m2\repository\net\bytebuddy\byte-buddy\1.11.19\byte-buddy-1.11.19.jar;C:\Users\Paweł\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.19\byte-buddy-agent-1.11.19.jar;C:\Users\Paweł\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\PAWE~1\AppData\Local\Temp\surefire7041646919512483213\surefirebooter15942365349214096140.jar C:\Users\Paweł\AppData\Local\Temp\surefire7041646919512483213 2023-01-01T17-11-59_298-jvmRun1 surefire11838960208128235232tmp surefire_08314659485877941384tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="pl.edu.pw.ee.**.*Test"/>
+    <property name="surefire.test.class.path" value="E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence\target\test-classes;E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence\target\classes;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Paweł\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.1\junit-vintage-engine-5.8.1.jar;C:\Users\Paweł\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\Paweł\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\Paweł\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Paweł\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Paweł\.m2\repository\org\assertj\assertj-core\3.11.1\assertj-core-3.11.1.jar;C:\Users\Paweł\.m2\repository\org\mockito\mockito-core\4.0.0\mockito-core-4.0.0.jar;C:\Users\Paweł\.m2\repository\net\bytebuddy\byte-buddy\1.11.19\byte-buddy-1.11.19.jar;C:\Users\Paweł\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.19\byte-buddy-agent-1.11.19.jar;C:\Users\Paweł\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Paweł"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\PAWE~1\AppData\Local\Temp\surefire7041646919512483213\surefirebooter15942365349214096140.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.2+8-LTS-86"/>
+    <property name="user.name" value="Paweł"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-13\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\Paweł\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\PAWE~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.2"/>
+    <property name="user.dir" value="E:\Algorytmy_Laboratorium\2022Z_AISD_git_lab_GR2_gr3\aisd_lab_9_longest_common_subsequence"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1250"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\PuTTY\;C:\Users\Paweł\AppData\Local\Microsoft\WindowsApps;C:\Users\Paweł\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.2+8-LTS-86"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="should_ThrowException_WhenBothStringsAreNull" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_ThrowException_WhenLeftStrIsNull" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveCarriageReturnCharacterInTheMiddle" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.007"/>
+  <testcase name="should_CorrectlyFindLCS_test1" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_test2" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrectlyFindLCS_test3" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_WhenStringsAreCompletlyDifferent" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveCarriageReturnCharacterAtTheEnd" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveNewLineCharacterAtTheEnd" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_WhenTwo_CharacterWords" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_ThrowException_WhenLeftStrIsEmpty" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyDisplay_WhenOneCharStrings" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.003"/>
+  <testcase name="should_CorrectlyFindLCS_WhenLongStrings" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.004"/>
+  <testcase name="should_CorrectlyFindLCS_WhenSameCharacterButDifferentSize" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_ThrowException_WhenTopStrIsEmpty" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_AfterDisplay" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.003"/>
+  <testcase name="should_CorrectlyFindLCS_WhenSingle_CharacterWords" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveCarriageReturnCharacterAtTheBeginning" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveNewLineCharacterInTheMiddle" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveNewLineCharacterAtTheBeginning" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyDisplay_WhenLongStrings" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.168"/>
+  <testcase name="should_CorrectlyFindLCS_WhenStringsHaveNonAsciiCharacters" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_WhenMultipleCorrectLCSExists" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrectlyDisplay_WhenSpecialCharacters" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrectlyFindLCS_WhenThree_CharacterWords" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleSpecialCharacters" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleNewLineCharacter" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyFindLCS_WhenOneStringIsInsideSecond" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_ThrowException_WhenBothStringsAreEmpty" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleCarriageReturnCharacter" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveTabCharacterAtTheBeginning" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleTabCharacter" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveTabCharacterAtTheEnd" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrectlyDisplay" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.007"/>
+  <testcase name="should_CorrectlyFindLCS_WhenStringsAreEqual" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleFormFeedCharacter" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0.001"/>
+  <testcase name="should_ThrowException_WhenTopStrIsNull" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+  <testcase name="should_CorrrectlyFindLCS_WhenWordsHaveMultipleBackspaceCharacter" classname="pl.edu.pw.ee.LongestCommonSubsequenceTest" time="0"/>
+</testsuite>
